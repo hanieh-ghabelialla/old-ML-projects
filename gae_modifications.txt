@@ -1,0 +1,13 @@
+# Add this case to the load_data function in modularity_aware_gae/input_data.py
+# Insert after line ~46 (after the 'blogs' case):
+
+    elif dataset == 'ibm_transactions':
+        # Load IBM transaction data
+        adj = sp.load_npz("../gae_data/adjacency_matrix.npz")
+        features = sp.load_npz("../gae_data/feature_matrix.npz")
+
+# Add this case to the load_labels function in modularity_aware_gae/input_data.py
+# Insert after line ~94 (after the 'blogs' case):
+
+    elif dataset == 'ibm_transactions':
+        labels = np.load("../gae_data/node_labels.npy")
